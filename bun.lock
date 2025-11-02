@@ -9,6 +9,7 @@
         "react": "^19.1.1",
         "react-dom": "^19.1.1",
         "three": "^0.181.0",
+        "use-error-boundary": "^2.0.6",
       },
       "devDependencies": {
         "@eslint/js": "^9.36.0",
@@ -613,6 +614,8 @@
     "update-browserslist-db": ["update-browserslist-db@1.1.4", "", { "dependencies": { "escalade": "^3.2.0", "picocolors": "^1.1.1" }, "peerDependencies": { "browserslist": ">= 4.21.0" }, "bin": { "update-browserslist-db": "cli.js" } }, "sha512-q0SPT4xyU84saUX+tomz1WLkxUbuaJnR1xWt17M7fJtEJigJeWUNGUqrauFXsHnqev9y9JTRGwk13tFBuKby4A=="],
 
     "uri-js": ["uri-js@4.4.1", "", { "dependencies": { "punycode": "^2.1.0" } }, "sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg=="],
+
+    "use-error-boundary": ["use-error-boundary@2.0.6", "", { "peerDependencies": { "react": ">=16.9.0", "react-dom": ">=16.9.0" }, "optionalPeers": ["react-dom"] }, "sha512-AWCVKSAanLe6R/on/ZkHYtGKfXs8BQX6z/TUGYqtvkajLqQyrGKJJscbahtq8OyN8L3LqTRjJWx4gCOLmfIObw=="],
 
     "use-sync-external-store": ["use-sync-external-store@1.6.0", "", { "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-Pp6GSwGP/NrPIrxVFAIkOQeyw8lFenOHijQWkUTrDvrF4ALqylP2C/KCkeS9dpUM3KvYRQhna5vt7IL95+ZQ9w=="],
 
