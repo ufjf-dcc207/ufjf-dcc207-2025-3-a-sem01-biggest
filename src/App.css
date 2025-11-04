@@ -8,5 +8,5 @@ body, html, #root {
 #canvas-container {
   width: 100vw;
   height: 100vh;
-  background-color: #242424; /* Fundo escuro para contrastar */
+  background-color: #1a1a1a; /* Fundo escuro */
 }
