@@ -1,5 +1,5 @@
 import { Cylinder } from "@react-three/drei";
-import type { MapObjectProps } from "../App";
+import type { MapObjectProps } from "../Types";
 
 export default function Button({ position }: MapObjectProps) {
     const height = 0.1;

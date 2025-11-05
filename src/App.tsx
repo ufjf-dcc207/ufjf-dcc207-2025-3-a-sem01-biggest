@@ -7,9 +7,7 @@ import Bush from "./elements/Bush";
 import Button from "./elements/Button";
 import Floor from "./elements/Floor";
 
-export type MapObjectProps = {
-    position: [number, number, number];
-};
+
 
 function MapObjects() {
     return (
@@ -24,7 +22,7 @@ function MapObjects() {
     );
 }
 
-function App() {
+export default function App() {
     return (
         <div id="canvas-container">
             <Canvas shadows camera={{ position: [8, 8, 8], fov: 60 }}>
@@ -56,4 +54,3 @@ function App() {
     );
 }
 
-export default App;

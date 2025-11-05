@@ -1,5 +1,5 @@
 import { Icosahedron } from "@react-three/drei";
-import type { MapObjectProps } from "../App";
+import type { MapObjectProps } from "../Types";
 
 export default function Bush({ position }: MapObjectProps) {
     const radius = 0.4;

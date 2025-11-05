@@ -1,11 +1,10 @@
 import { Box } from "@react-three/drei";
+import Wall from "./Wall";
 
 export default function Floor({
-    gridSize = 10,
+    gridSize = 11,
     gridHalfSize = gridSize / 2,
     cubeSize = 1,
-    wallHeight = 2.5,
-    wallThickness = 0.2,
 }: {
     gridSize: number;
     gridHalfSize?: number;
@@ -19,7 +18,7 @@ export default function Floor({
             for (let z = 0; z < gridSize; z++) {
                 const posX = (x - gridHalfSize) * cubeSize + cubeSize / 2;
                 const posZ = (z - gridHalfSize) * cubeSize + cubeSize / 2;
-                const posY = -0.5 + (Math.random() - 0.5) * 0.1;
+                const posY = -0.5 + (Math.random() - 0.5) * 0.05;
 
                 tempCubes.push(
                     <Box
@@ -27,6 +26,7 @@ export default function Floor({
                         args={[cubeSize, 1, cubeSize]}
                         position={[posX, posY, posZ]}
                         receiveShadow
+                        castShadow
                     >
                         <meshStandardMaterial color="#666" />
                     </Box>
@@ -37,61 +37,13 @@ export default function Floor({
     };
 
     const walls = () => {
-        const mapSize = gridSize * cubeSize;
-        const wallYPos = wallHeight / 2;
-        const wallEdge = mapSize / 2;
-
-        const halfThickness = wallThickness / 2;
-
+        const dist = gridSize / 2 + (gridSize % 2 === 0 ? 0 : 1);
         return (
             <group>
-                {/* Muro Traseiro (no Z negativo) */}
-                <Box
-                    key="wall-back"
-                    args={[mapSize + wallThickness, wallHeight, wallThickness]}
-                    // Posição Z corrigida
-                    position={[0, wallYPos, -wallEdge - halfThickness]}
-                    castShadow
-                    receiveShadow
-                >
-                    <meshStandardMaterial color="#888" />
-                </Box>
-
-                {/* Muro Frontal (no Z positivo) */}
-                <Box
-                    key="wall-front"
-                    args={[mapSize + wallThickness, wallHeight, wallThickness]}
-                    // Posição Z corrigida
-                    position={[0, wallYPos, wallEdge + halfThickness]}
-                    castShadow
-                    receiveShadow
-                >
-                    <meshStandardMaterial color="#888" />
-                </Box>
-
-                {/* Muro Esquerdo (no X negativo) */}
-                <Box
-                    key="wall-left"
-                    args={[wallThickness, wallHeight, mapSize]}
-                    // Posição X corrigida
-                    position={[-wallEdge - halfThickness, wallYPos, 0]}
-                    castShadow
-                    receiveShadow
-                >
-                    <meshStandardMaterial color="#888" />
-                </Box>
-
-                {/* Muro Direito (no X positivo) */}
-                <Box
-                    key="wall-right"
-                    args={[wallThickness, wallHeight, mapSize]}
-                    // Posição X corrigida
-                    position={[wallEdge + halfThickness, wallYPos, 0]}
-                    castShadow
-                    receiveShadow
-                >
-                    <meshStandardMaterial color="#888" />
-                </Box>
+                <Wall cubeSize={cubeSize} position={[dist, 0, dist]} wallLength={gridSize} orientation="horizontal" />
+                <Wall cubeSize={cubeSize} position={[dist, 0, -dist]} wallLength={gridSize} orientation="horizontal" />
+                <Wall cubeSize={cubeSize} position={[dist, 0, dist]} wallLength={gridSize} orientation="vertical" />
+                <Wall cubeSize={cubeSize} position={[-dist, 0, dist]} wallLength={gridSize} orientation="vertical" />
             </group>
         );
     };

@@ -1,5 +1,5 @@
 import { Box } from "@react-three/drei";
-import type { MapObjectProps } from "../App";
+import type { MapObjectProps } from "../Types";
 
 export default function Car({ position }: MapObjectProps) {
     const bodyHeight = 0.4;
