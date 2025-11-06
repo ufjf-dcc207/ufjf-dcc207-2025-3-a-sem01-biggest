@@ -13,8 +13,8 @@ const stageOne: Stage = {
     floor: `1
 2 116
 8 1 0
-4 1 2
-0 4 8
+4 1 1
+0 4 6
 448 2
 `,
     playerPosition: [0, 2],
