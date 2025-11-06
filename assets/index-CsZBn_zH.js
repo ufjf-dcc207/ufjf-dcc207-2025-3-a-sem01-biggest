@@ -4056,14 +4056,15 @@ No matching component was found for:
 2
 3
 4
-5
+3
+3
 `,playerPosition:[0,2],position:[0,0,0]},x_={floor:`1111
 1221
 1232
 1121
 `,playerPosition:[1,1],position:[-10,0,10]},v_={floor:`11111
-12221
-12321
-11211
+1 2 1
+1 3 1
+11 11
 11111
 `,playerPosition:[2,2],position:[-20,0,20]};function KL(){return ce.jsx("div",{id:"canvas-container",children:ce.jsxs(OL,{shadows:!0,camera:{position:[8,8,8],fov:50},children:[ce.jsx("ambientLight",{intensity:.3}),ce.jsx("directionalLight",{position:[10,15,5],intensity:1.5,castShadow:!0}),ce.jsx("pointLight",{position:[-10,-5,-10],intensity:.2}),ce.jsx("group",{position:g_.position,children:ce.jsx(m_,{grid:g_.floor,playerPosition:g_.playerPosition})}),ce.jsx("group",{position:x_.position,children:ce.jsx(m_,{grid:x_.floor,playerPosition:x_.playerPosition})})," ",ce.jsx("group",{position:v_.position,children:ce.jsx(m_,{grid:v_.floor,playerPosition:v_.playerPosition})}),ce.jsx(XL,{})]})})}t2.createRoot(document.getElementById("root")).render(ce.jsx(Te.StrictMode,{children:ce.jsx(KL,{})}));
